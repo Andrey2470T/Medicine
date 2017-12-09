@@ -2,7 +2,7 @@ Medicine
 
 This mod adds different medical accessories that can get better to your health.
 
-Currently the mod includes:
+Currently it includes:
    1.Medicine block.
    2.Alcohol.
    3.Bandage.
