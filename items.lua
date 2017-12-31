@@ -12,9 +12,9 @@ minetest.register_node("medicine:medicine_block", {
 			minetest.env:add_item(self.object:getpos(), "medicine:filling_syringe", "medicine:cotton_wool", "medicine:alcohol", "medicine:plaster")
 		end]]
 })
-minetest.register_craftitem('medicine:filling_syringe', {
-    description = 'Filling Syringe',
-    inventory_image = 'filling_syringe.png',
+minetest.register_craftitem('medicine:syringe_with_healing_fluid', {
+    description = 'Syringe (Healing fluid)',
+    inventory_image = 'syringe_with_healing_fluid.png',
     stack_max = 12,
     on_use = minetest.item_eat(20, 'medicine:empty_syringe'),
 })
@@ -25,9 +25,9 @@ minetest.register_craftitem('medicine:empty_syringe', {
     stack_max = 12,
 })
 
-minetest.register_craftitem('medicine:pill', {
-    description = 'Pill',
-    inventory_image = 'pill.png',
+minetest.register_craftitem('medicine:healing_pill', {
+    description = 'Healing Pill',
+    inventory_image = 'healing_pill.png',
     stack_max = 12,
     on_use = minetest.item_eat(20),
 })
@@ -39,9 +39,9 @@ minetest.register_craftitem('medicine:tablet', {
     on_use = minetest.item_eat(20),
 })
 
-minetest.register_craftitem('medicine:alcohol', {
-    description = 'Alcohol',
-    inventory_image = 'alcohol.png',
+minetest.register_craftitem('medicine:alcohol_bottle', {
+    description = 'Alcohol Bottle',
+    inventory_image = 'alcohol_bottle.png',
     stack_max = 12,
 })
 
@@ -51,11 +51,11 @@ minetest.register_craftitem('medicine:mask', {
     stack_max = 12,
 })
 
-minetest.register_craftitem('medicine:thermometr', {
+--[[minetest.register_craftitem('medicine:thermometr', {
     description = 'Thermometr',
     inventory_image = 'thermometr.png',
     stack_max = 12,
-})
+})]]
 
 minetest.register_craftitem('medicine:headphones', {
     description = 'Headphones',
@@ -123,10 +123,10 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-    output = 'medicine:filling_syringe',
+    output = 'medicine:syringe_with_healing_fluid',
     recipe = {
       {'medicine:empty_syringe','',''},
-      {'medicine:alcohol','bucket:bucket_water',''},
+      {'medicine:alcohol_bottle','bucket:bucket_water',''},
       {'medicine:tablet','bucket:bucket_water',''},
     }
 })
@@ -141,9 +141,9 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-    output = 'medicine:pill',
+    output = 'medicine:healing_pill',
     recipe = {
-      {'medicine:alcohol','',''},
+      {'medicine:alcohol_bottle','',''},
       {'default:leaves','',''},
       {'','',''},
     }
@@ -153,13 +153,13 @@ minetest.register_craft({
     output = 'medicine:tablet',
     recipe = {
       {'default:leaves','',''},
-      {'medicine:alcohol','',''},
+      {'medicine:alcohol_bottle','',''},
       {'','',''},
     }
 })
 
 minetest.register_craft({
-    output = 'medicine:alcohol',
+    output = 'medicine:alcohol_bottle',
     recipe = {
       {'bucket:bucket_water','',''},
       {'default:leaves','',''},
@@ -176,14 +176,14 @@ minetest.register_craft({
     }
 })
 
-minetest.register_craft({
+--[[minetest.register_craft({
     output = 'medicine:thermometr',
     recipe = {
       {'default:glass','default:steel_ingot',''},
       {'','',''},
       {'','',''},
     }
-})
+})]]
   
 minetest.register_craft({
     output = 'medicine:pinceps',
@@ -207,7 +207,7 @@ minetest.register_craft({
     output = 'medicine:plaster',
     recipe = {
       {'default:leaves','wool:yellow',''},
-      {'medicine:alcohol','',''},
+      {'medicine:alcohol_bottle','',''},
       {'','',''},
     }
 })
@@ -216,7 +216,7 @@ minetest.register_craft({
     output = 'medicine:cotton_wool',
     recipe = {
       {'group:wool','',''},
-      {'medicine:alcohol','',''},
+      {'medicine:alcohol_bottle','',''},
       {'','',''},
     }
 })
