@@ -1,4 +1,4 @@
-Medicine
+Medicine 1.12 (Newest Version)
 
 This mod adds different medical accessories that can get better to your health.
 
